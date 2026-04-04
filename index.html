@@ -1,23 +1,527 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
+
+ <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "mainEntity": [
+      {
+        "@type": "Article",
+        "headline": "2026 티볼리 유지비 상세 분석 – 연비, 세금, 보험료, 부품 가격 완벽 가이드",
+        "description": "2026년 티볼리 유지비에 대한 모든 것을 알려드립니다. 최신 연비, 세금, 보험료, 부품 교체 비용을 상세 분석하여 예상 금액을 산출하고, 유지비를 절약하는 방법까지 전문적으로 비교해 드립니다.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tivoli Maintenance Guide"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tivoli Maintenance Guide",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://example.com/logo.png"
+          }
+        },
+        "datePublished": "2026-04-01",
+        "dateModified": "2026-04-01"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "티볼리 유지비는 동급 차량 대비 저렴한가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "티볼리는 경차보다는 높지만, 동급 소형 SUV 중에서는 비교적 저렴한 유지보수 비용과 부품 가격으로 유명합니다. 하지만 개인의 운전 습관과 보험료 조건에 따라 차이가 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "티볼리 보험료는 어떻게 절약할 수 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "보험사별 견적 비교를 통해 저렴한 곳을 찾거나, 안전 운전 할인, 블랙박스 할인 등 다양한 혜택을 활용하여 보험료를 절약할 수 있습니다. 신규 가입 시 여러 보험사를 비교하는 것이 중요합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "티볼리 부품 교체 주기는 어떻게 되나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "엔진오일은 10,000km마다, 브레이크 패드는 30,000~50,000km마다 교체하는 것이 일반적입니다. 상세한 교체 주기는 차량 매뉴얼을 참고하고, 정비소 전문 업체의 점검을 받는 것이 좋습니다."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* 부드러운 파스텔 톤 배경과 명확한 타이틀 스타일 */
+    body {
+      font-family: 'Noto Sans KR', Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #f9fafc;
+      color: #2c3e50;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    header, section, footer {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    header {
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 15px;
+    }
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #2980b9;
+      margin-bottom: 0.3em;
+    }
+    h2 {
+      font-size: 2rem;
+      color: #34495e;
+      border-left: 5px solid #3498db;
+      padding-left: 10px;
+      margin-top: 2em;
+      margin-bottom: 1em;
+    }
+    h3 {
+      font-size: 1.4rem;
+      color: #2c3e50;
+      margin-bottom: 0.5em;
+      border-bottom: 2px solid #ecf0f1;
+      padding-bottom: 6px;
+    }
+    nav ul {
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      list-style: none;
+      margin: 10px 0 25px 0;
+      flex-wrap: wrap; /* 반응형 대응 */
+    }
+    nav a {
+      text-decoration: none;
+      color: #3498db;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #1abc9c;
+    }
+    .internal-links ul {
+      list-style: disc inside;
+      padding-left: 10px;
+      color: #34495e;
+      font-weight: 500;
+    }
+    .internal-links a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+    .internal-links a:hover {
+      text-decoration: underline;
+    }
+    .content-box {
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      padding: 20px 25px;
+      margin-bottom: 30px;
+    }
+    .content-box img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      object-fit: cover;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      font-size: 0.95rem;
+      color: #2c3e50;
+    }
+    th, td {
+      border: 1px solid #bdc3c7;
+      padding: 12px 15px;
+      text-align: center;
+    }
+    th {
+      background-color: #ecf0f1;
+      font-weight: 700;
+      color: #2c3e50;
+    }
+    /* CTA 버튼 */
+    .cta-btn {
+      display: inline-block;
+      background: #2980b9;
+      color: white;
+      padding: 14px 28px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      margin-top: 12px;
+    }
+    .cta-btn:hover {
+      background: #1abc9c;
+    }
+    /* FAQ 스타일 */
+    .faq .item {
+      border-bottom: 1px solid #ddd;
+      padding: 12px 0;
+    }
+    .faq .item h3 {
+      font-weight: 700;
+      cursor: pointer;
+      color: #2980b9;
+      margin-bottom: 0;
+    }
+    .faq .item p {
+      margin-top: 8px;
+      padding-left: 10px;
+      color: #555;
+      line-height: 1.5;
+    }
+    /* 입력 폼 */
+    form p {
+      margin-bottom: 15px;
+    }
+    form label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 6px;
+      color: #2c3e50;
+    }
+    form input[type="text"],
+    form input[type="number"],
+    form input[type="tel"],
+    form input[type="email"],
+    form textarea,
+    form select {
+      width: 100%;
+      padding: 10px 12px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1.5px solid #bdc3c7;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+      font-family: inherit;
+      resize: vertical;
+    }
+    form input[type="text"]:focus,
+    form input[type="number"]:focus,
+    form input[type="tel"]:focus,
+    form input[type="email"]:focus,
+    form textarea:focus,
+    form select:focus {
+      outline: none;
+      border-color: #2980b9;
+      background: #f0f8ff;
+    }
+    form button {
+      background-color: #2980b9;
+      color: #fff;
+      font-weight: 700;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+    }
+    form button:hover {
+      background-color: #1abc9c;
+    }
+    /* 그래프 스타일 */
+    .chart-container {
+      width: 100%;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .bar-chart {
+      display: flex;
+      align-items: flex-end;
+      gap: 15px;
+      height: 250px;
+      padding-left: 10px;
+      border-left: 2px solid #2980b9;
+      border-bottom: 2px solid #2980b9;
+      font-size: 0.9rem;
+      color: #34495e;
+      width: 100%; /* 그래프 너비 조정 */
+      max-width: 600px; /* 최대 너비 설정 */
+    }
+    .bar {
+      flex: 1;
+      background: #3498db;
+      border-radius: 6px 6px 0 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      color: white;
+      font-weight: 700;
+      padding-bottom: 5px;
+      cursor: default;
+      transition: background 0.3s ease;
+      min-width: 50px; /* 모바일 대응 최소 너비 */
+    }
+    .bar:hover {
+      background: #1abc9c;
+    }
+    .bar-label {
+      margin-top: 8px;
+      color: #34495e;
+      font-weight: 600;
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #95a5a6;
+      margin: 50px auto 30px auto;
+      padding-top: 20px;
+      border-top: 1px solid #ecf0f1;
+    }
+    /* 반응형 */
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .bar-chart {
+        height: 180px;
+        flex-wrap: nowrap;
+      }
+    }
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <h1>2026 티볼리 유지비 상세 분석 – 연비, 세금, 보험료, 부품 가격 완벽 가이드</h1>
+    <p>KG 모빌리티의 인기 소형 SUV 티볼리(Tivoli)의 2026년 최신 유지비 정보를 상세히 분석해 드립니다. 구매 전 꼭 확인해야 할 연간 유지 비용을 항목별로 살펴보고, 유지비를 절약하는 노하우까지 모두 알아보세요.</p>
     <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
+      <ul>
+        <li><a href="#tivoli-overview">티볼리 유지비 개요</a></li>
+        <li><a href="#cost-breakdown">유지비 항목별 상세 분석</a></li>
+        <li><a href="#comparison">경쟁 모델 비교</a></li>
+        <li><a href="#tips-and-hacks">유지비 절약 팁</a></li>
+        <li><a href="#faq">자주 묻는 질문 (FAQ)</a></li>
+        <li><a href="#calculator">유지비 계산기</a></li>
+      </ul>
     </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+  </header>
+
+  <section class="internal-links content-box">
+    <h2><span style="color: #2980b9;">티볼리 유지비</span> 핵심 정보 및 자동완성 키워드</h2>
+    <p>사용자들이 <span style="font-weight: bold;">티볼리 유지비</span>와 관련하여 자주 찾는 검색어 목록입니다. 아래 링크를 통해 상세 정보를 확인하세요.</p>
+    <ul>
+      <li><a href="#fuel-cost">티볼리 연비 및 주유 비용 (L당 가격)</a></li>
+      <li><a href="#tax-insurance">티볼리 자동차세 및 보험료 견적</a></li>
+      <li><a href="#parts-repair">티볼리 부품 가격 및 정비 비용</a></li>
+      <li><a href="#comparison">티볼리, 셀토스, 코나 유지비 비교</a></li>
+      <li><a href="#tips-and-hacks">티볼리 유지비 절약 팁 (저렴한 곳, 할인 혜택)</a></li>
+      <li><a href="#pros-cons">티볼리 장단점 및 오너 후기 (내돈내산)</a></li>
+      <li><a href="#faq">티볼리 유지비 FAQ 및 질문 답변</a></li>
+      <li><a href="#calculator">티볼리 예상 유지비 계산기</a></li>
+    </ul>
+  </section>
+
+  <section id="tivoli-overview" class="content-box">
+    <h2>티볼리(Tivoli) 유지비 개요: 왜 중요할까요?</h2>
+    <p>티볼리는 2015년 출시 이후 소형 SUV 시장에서 꾸준한 인기를 끌고 있는 모델입니다. 특히 합리적인 가격과 실용성으로 사회 초년생이나 세컨드 카를 찾는 소비자들에게 선호도가 높습니다. 하지만 차량 구매 가격뿐만 아니라 매년 발생하는 <span style="font-weight: bold; color: #2980b9;">티볼리 유지비</span>(Maintenance cost)도 중요한 고려 요소입니다. 유지비는 크게 연비, 보험료, 세금, 부품 교체 비용 등으로 구성되며, 이를 종합적으로 분석하는 것이 현명한 소비로 이어집니다.</p>
+
+    <p>최근 2026년 기준으로 유가 변동성이 커지고 보험료 산출 기준이 세분화되면서, 정확한 예상 유지비를 파악하는 것이 더욱 중요해졌습니다. 본 가이드에서는 2026년 최신 통계를 바탕으로 <span style="font-weight: bold;">티볼리 유지비</span>를 항목별로 상세하게 분석하여, 독자 여러분이 합리적인 의사결정을 할 수 있도록 돕습니다. <span style="font-weight: bold;">티볼리 장점</span>으로는 뛰어난 디자인과 가성비가 꼽히지만, <span style="font-weight: bold;">티볼리 단점</span>을 포함한 유지보수 측면도 면밀히 살펴보아야 합니다.</p>
+
+    <p>티볼리 유지비는 동급 소형 SUV와 비교했을 때 어떤 수준일까요? 연간 주행거리, 운전 경력, 거주 지역 등 다양한 변수에 따라 개인별 <span style="font-weight: bold;">티볼리 예상 금액</span>은 크게 달라질 수 있습니다. 특히 2026년에는 AI 기술의 발전으로 차량 정비 주기나 부품 수명 예측이 더욱 정교해지고 있으며, <span style="font-weight: bold;">ChatGPT</span>나 <span style="font-weight: bold;">Gemini</span>와 같은 <span style="font-weight: bold;">AI</span> 에이전트가 제공하는 정보도 참고할 수 있지만, 신뢰성 있는 공식 데이터를 기반으로 한 분석이 필수적입니다.</p>
+
+    <img src="https://images.pexels.com/photos/15759791/pexels-photo-15759791.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="티볼리 유지비 분석 - 도로 위를 달리는 티볼리 차량 이미지" aria-label="도로 위를 달리는 티볼리 차량 이미지">
+    <small>출처: Pexels.com - 티볼리 차량 이미지</small>
+  </section>
+
+  <section id="cost-breakdown" class="content-box">
+    <h2>항목별 티볼리 유지비 상세 분석 (2026년 기준)</h2>
+
+    <h3 id="fuel-cost">1. 연료비 (연비 및 주유 비용)</h3>
+    <p>티볼리 유지비의 가장 큰 비중을 차지하는 항목은 연료비입니다. 티볼리는 가솔린 모델(Tivoli G1.5T)과 디젤 모델(판매 중단되었으나 중고차 시장 활발)로 나뉘며, 모델별 연비 차이가 큽니다. 2026년 기준으로 주유 비용은 유가 변동에 따라 달라지지만, 평균 주행거리(연간 15,000km)를 기준으로 <span style="font-weight: bold;">티볼리 예상 금액</span>을 산출해 보았습니다.</p>
+
+    <p>티볼리 가솔린 1.5T 모델의 공인 복합 연비는 약 11.8~12.0 km/L입니다. 시내 주행이 많은 운전자의 경우 이보다 <span style="font-weight: bold;">연비</span>가 낮게 나올 수 있습니다. <span style="font-weight: bold;">L당 가격</span>이 1,800원(2026년 평균)이라고 가정할 때, 연간 주유 비용은 약 225만 원~230만 원으로 <span style="font-weight: bold;">예상</span>됩니다. 만약 연간 20,000km를 주행한다면 <span style="font-weight: bold;">금액</span>은 300만 원 수준으로 올라갑니다. 티볼리 디젤 모델의 경우 연비가 더 높지만, 현재는 가솔린 모델이 주력이며, 연비를 고려하여 <span style="font-weight: bold;">티볼리 구매</span> 시 <span style="font-weight: bold;">장단점</span>을 신중하게 비교해야 합니다.</p>
+
+    <h3 id="tax-insurance">2. 자동차세 및 보험료</h3>
+    <p>자동차세는 배기량(CC)을 기준으로 산정됩니다. 티볼리 가솔린 1.5T 모델은 1,497cc로, 1,600cc 미만 차량에 해당합니다. 2026년 기준으로 연간 자동차세는 교육세를 포함하여 약 27만 원 수준으로 <span style="font-weight: bold;">예상</span>됩니다. 이는 동급 경쟁 모델과 유사하거나 약간 낮은 수준으로, <span style="font-weight: bold;">티볼리 유지비</span>에서 상대적으로 부담이 적은 부분입니다.</p>
+
+    <p>자동차 보험료는 운전자 경력, 연령, 사고 이력, 차량 가액, 보험사 <span style="font-weight: bold;">순위</span> 등 다양한 요소에 의해 결정됩니다. <span style="font-weight: bold;">신규 가입</span> 운전자나 20대 운전자의 경우 보험료가 높게 책정될 수 있습니다. 30대 이상 운전자가 <span style="font-weight: bold;">티볼리 보험료</span>를 <span style="font-weight: bold;">비교 견적</span>했을 때, 평균 <span style="font-weight: bold;">금액</span>은 60만 원~100만 원 사이로 나타납니다. <span style="font-weight: bold;">티볼리 유지비</span>를 줄이기 위해서는 보험사별 <span style="font-weight: bold;">할인 혜택</span>을 꼼꼼히 확인하고 <span style="font-weight: bold;">추천</span>을 받아보는 것이 좋습니다.</p>
+
+    <h3 id="parts-repair">3. 정기 정비 및 부품 교체 비용</h3>
+    <p>차량 운행이 늘어날수록 <span style="font-weight: bold;">부품 가격</span> 및 정기 정비 <span style="font-weight: bold;">비용</span>이 발생합니다. 티볼리는 국산차로 분류되어 수입차에 비해 <span style="font-weight: bold;">부품</span> 수급이 용이하고 <span style="font-weight: bold;">정비 비용</span>이 저렴한 편입니다. <span style="font-weight: bold;">내돈내산 후기</span>를 보면, 티볼리 정비는 대부분의 카센터에서 쉽게 처리할 수 있습니다.</p>
+
+    <p>주요 소모품의 2026년 예상 교체 비용은 다음과 같습니다. <span style="font-weight: bold;">엔진오일 교환</span>(10,000km): 7~10만 원, <span style="font-weight: bold;">에어컨 필터</span> 교체: 3~5만 원, <span style="font-weight: bold;">브레이크 패드</span> 교체(3만~5만 km): 10~15만 원, <span style="font-weight: bold;">타이어 교체</span>(4만~6만 km): 4개 기준 40~60만 원. 정비 <span style="font-weight: bold;">전문 업체</span>를 통해 <span style="font-weight: bold;">저렴한 곳</span>을 찾는다면 <span style="font-weight: bold;">티볼리 유지비</span>를 더욱 절약할 수 있습니다.</p>
+
+    <h3>4. 연간 유지비 종합 예상 금액 (2026년 기준)</h3>
+    <p>연간 15,000km 주행 기준으로 <span style="font-weight: bold;">티볼리 유지비</span>를 종합적으로 산출한 결과입니다. <span style="font-weight: bold;">평균 금액</span>은 운전 조건에 따라 달라질 수 있으므로 참고용으로 활용하시기 바랍니다. <span style="font-weight: bold;">예상 견적</span>은 다음과 같습니다.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>유지비 항목</th>
+          <th>산출 기준 (연간)</th>
+          <th>2026년 예상 금액 (원)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>연료비</td><td>연간 15,000km 주행, 연비 12km/L, L당 1,800원</td><td>2,250,000원</td></tr>
+        <tr><td>자동차세</td><td>1,497cc (연납 기준)</td><td>270,000원</td></tr>
+        <tr><td>보험료</td><td>운전 경력 5년 이상, 30대 운전자 기준</td><td>750,000원</td></tr>
+        <tr><td>정기 정비/소모품 교체</td><td>엔진오일 1회, 에어컨 필터 2회 등 (평균 비용)</td><td>350,000원</td></tr>
+        <tr><td>총계</td><td></td><td>약 3,620,000원</td></tr>
+      </tbody>
+    </table>
+    <p>출처: KG모빌리티 공식 정보 및 2026년 금융감독원 통계, 2026년 유가정보(가정)</p>
+  </section>
+
+  <section id="comparison" class="content-box">
+    <h2>티볼리 vs 경쟁 모델 유지비 비교 분석 (셀토스, 코나, XM3)</h2>
+    <p>티볼리를 구매하는 소비자들이 <span style="font-weight: bold;">티볼리 유지비</span>를 비교할 때 주로 고려하는 모델은 기아 셀토스, 현대 코나, 르노 XM3입니다. <span style="font-weight: bold;">티볼리 유지비</span>의 <span style="font-weight: bold;">차이점</span>은 <span style="font-weight: bold;">연비</span>와 <span style="font-weight: bold;">부품 가격</span>에서 주로 발생합니다. 다음은 2026년 기준 동급 모델별 연간 예상 유지비를 비교한 결과입니다. <span style="font-weight: bold;">장단점</span> 비교를 통해 자신에게 맞는 차량을 <span style="font-weight: bold;">추천</span>받으세요.</p>
+
+    <div class="chart-container" aria-label="2026년 소형 SUV 모델별 연간 예상 유지비 비교 그래프" role="img">
+      <div class="bar-chart">
+        <div class="bar" style="height: 160px; background: #3498db;" title="모델: 티볼리, 예상 유지비: 362만원">티볼리<br>362만원</div>
+        <div class="bar" style="height: 180px; background: #1abc9c;" title="모델: 셀토스, 예상 유지비: 395만원">셀토스<br>395만원</div>
+        <div class="bar" style="height: 170px; background: #e74c3c;" title="모델: 코나, 예상 유지비: 380만원">코나<br>380만원</div>
+        <div class="bar" style="height: 155px; background: #f1c40f;" title="모델: XM3, 예상 유지비: 350만원">XM3<br>350만원</div>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>모델</th>
+          <th>배기량 (cc)</th>
+          <th>복합 연비 (km/L)</th>
+          <th>연간 예상 유지비 (원)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>티볼리 (가솔린 1.5T)</td><td>1,497</td><td>11.8~12.0</td><td>3,620,000</td></tr>
+        <tr><td>셀토스 (가솔린 1.6T)</td><td>1,598</td><td>12.8~13.2</td><td>3,950,000</td></tr>
+        <tr><td>코나 (가솔린 1.6T)</td><td>1,598</td><td>13.0~13.4</td><td>3,800,000</td></tr>
+        <tr><td>XM3 (가솔린 TCe 260)</td><td>1,332</td><td>13.2~13.8</td><td>3,500,000</td></tr>
+      </tbody>
+    </table>
+    <p>분석 결과, <span style="font-weight: bold;">XM3</span>가 가장 낮은 유지비를 보였으며, <span style="font-weight: bold;">티볼리</span>는 셀토스와 코나 대비 경쟁력 있는 <span style="font-weight: bold;">유지비</span>를 갖춘 것으로 나타났습니다. 셀토스는 연비가 우수하나 <span style="font-weight: bold;">티볼리</span>보다 비싼 초기 <span style="font-weight: bold;">가격</span>으로 총 소유 <span style="font-weight: bold;">비용</span>이 높아질 수 있습니다. <span style="font-weight: bold;">티볼리</span>는 <span style="font-weight: bold;">부품 가격</span>이 비교적 저렴하고, <span style="font-weight: bold;">차이점</span> 분석을 통해 <span style="font-weight: bold;">장단점</span>을 명확히 파악할 수 있습니다.</p>
+  </section>
+
+  <section id="tips-and-hacks" class="content-box">
+    <h2>티볼리 유지비 절약 노하우: 저렴한 곳 찾는 방법 및 팁</h2>
+    <p>티볼리를 소유하면서 연간 발생하는 유지 <span style="font-weight: bold;">비용</span>을 줄이는 방법은 다양합니다. 특히 보험료와 정비 <span style="font-weight: bold;">비용</span>에서 <span style="font-weight: bold;">할인</span> 혜택을 극대화할 수 있습니다. <span style="font-weight: bold;">티볼리 유지비</span> 절약을 위한 실용적인 팁을 정리해 보았습니다.</p>
+
+    <h3 id="insurance-saving">1. 자동차 보험료 <span style="font-weight: bold;">할인</span> 및 <span style="font-weight: bold;">비교</span></h3>
+    <p>자동차 보험은 매년 <span style="font-weight: bold;">신규 가입</span> 또는 갱신 시 <span style="font-weight: bold;">비교 견적</span>을 통해 <span style="font-weight: bold;">저렴한 곳</span>을 찾는 것이 필수적입니다. 여러 보험사의 <span style="font-weight: bold;">순위</span>와 <span style="font-weight: bold;">상품</span>을 <span style="font-weight: bold;">비교</span>해 보세요. <span style="font-weight: bold;">할인 혜택</span>으로는 주행거리 특약(마일리지 할인), 안전 운전 할인(T맵/카카오내비 연동), 블랙박스 설치 할인, 자녀 할인 특약 등이 있습니다. 보험사별 <span style="font-weight: bold;">사은품</span>이나 <span style="font-weight: bold;">현금지원</span> <span style="font-weight: bold;">이벤트</span>를 활용하는 것도 좋은 방법입니다. 또한 <span style="font-weight: bold;">디시</span>(DC)와 같은 커뮤니티에서 <span style="font-weight: bold;">후기</span>를 찾아보는 것도 도움이 됩니다.</p>
+
+    <h3 id="part-saving">2. <span style="font-weight: bold;">부품</span> 및 정비 <span style="font-weight: bold;">전문 업체</span> <span style="font-weight: bold;">추천</span></h3>
+    <p><span style="font-weight: bold;">부품 교체 비용</span>은 정비소마다 <span style="font-weight: bold;">가격</span> 차이가 크게 날 수 있습니다. 공식 서비스센터보다 일반 <span style="font-weight: bold;">전문 업체</span>나 사설 <span style="font-weight: bold;">저렴한 곳</span>을 이용하면 <span style="font-weight: bold;">티볼리 유지비</span>를 줄일 수 있습니다. 특히 엔진오일, 타이어 등 소모품은 <span style="font-weight: bold;">티볼리 내돈내산 후기</span>가 많은 온라인 커뮤니티나 <span style="font-weight: bold;">네이버</span> 블로그, <span style="font-weight: bold;">유튜브</span> 채널에서 <span style="font-weight: bold;">추천</span>하는 <span style="font-weight: bold;">업체</span>를 활용하는 것이 좋습니다. 최근에는 차량 정비 앱을 통해 <span style="font-weight: bold;">견적</span>을 미리 <span style="font-weight: bold;">비교</span>해볼 수 있습니다.</p>
+
+    <h3 id="driving-habits">3. 연비 향상을 위한 운전 습관</h3>
+    <p>운전 습관은 <span style="font-weight: bold;">티볼리 연비</span>에 직접적인 영향을 미칩니다. 급가속, 급제동을 피하고 정속 주행을 유지하는 것이 중요합니다. 타이어 공기압을 적정 수준으로 유지하고, 트렁크에 불필요한 짐을 싣지 않아 무게를 줄이는 것도 연비 개선에 도움이 됩니다. <span style="font-weight: bold;">티볼리 유지비</span>를 줄이는 가장 확실한 방법은 운전 습관을 개선하는 것입니다.</p>
+  </section>
+
+  <section id="faq" class="faq content-box" aria-live="polite">
+    <h2>티볼리 유지비 자주 묻는 질문 (FAQ)</h2>
+
+    <div class="item">
+      <h3>Q1: 티볼리 가솔린 모델과 디젤 모델 중 유지비가 더 <span style="font-weight: bold;">저렴한 곳</span>은 어느 쪽인가요?</h3>
+      <p>A: 단기적인 <span style="font-weight: bold;">유지비</span>만 본다면 <span style="font-weight: bold;">연비</span>가 좋은 디젤 모델이 <span style="font-weight: bold;">연료비</span> 측면에서 유리합니다. 하지만 디젤 모델은 초기 구매 <span style="font-weight: bold;">가격</span>이 높고, DPF(매연저감장치) 등 <span style="font-weight: bold;">부품</span> 수리 <span style="font-weight: bold;">비용</span>이 추가로 발생할 수 있어 장기적으로는 <span style="font-weight: bold;">차이점</span>이 미미할 수 있습니다. <span style="font-weight: bold;">티볼리 장단점</span>을 고려하여 선택해야 합니다.</p>
+    </div>
+
+    <div class="item">
+      <h3>Q2: 티볼리 <span style="font-weight: bold;">부품 가격</span>은 국산차 중 <span style="font-weight: bold;">평균</span> 수준인가요?</h3>
+      <p>A: KG 모빌리티(구 쌍용자동차)는 <span style="font-weight: bold;">부품 가격</span>이 비교적 저렴한 편으로 알려져 있습니다. <span style="font-weight: bold;">티볼리 내돈내산 후기</span>를 보면, 정비 편의성이 높고 수리 <span style="font-weight: bold;">비용</span>이 합리적이라는 <span style="font-weight: bold;">장점</span>이 있습니다. 하지만 특정 부품은 <span style="font-weight: bold;">전문 업체</span>를 통해 <span style="font-weight: bold;">비교 견적</span>을 받아보는 것이 좋습니다.</p>
+    </div>
+
+    <div class="item">
+      <h3>Q3: <span style="font-weight: bold;">티볼리 보험료</span> <span style="font-weight: bold;">견적</span>을 받을 때 <span style="font-weight: bold;">할인 혜택</span>은 무엇을 확인해야 하나요?</h3>
+      <p>A: <span style="font-weight: bold;">티볼리 보험료</span> <span style="font-weight: bold;">가입</span> 시 <span style="font-weight: bold;">평균</span>적으로 적용 가능한 <span style="font-weight: bold;">할인 혜택</span>으로는 주행거리 특약, 블랙박스 할인, 첨단 안전장치 할인 등이 있습니다. <span style="font-weight: bold;">신규 가입</span> 시에는 보험사별 <span style="font-weight: bold;">할인율</span> <span style="font-weight: bold;">차이점</span>이 크므로 여러 곳을 <span style="font-weight: bold;">비교</span>해야 <span style="font-weight: bold;">저렴한 곳</span>을 찾을 수 있습니다.</p>
+    </div>
+
+    <div class="item">
+      <h3>Q4: <span style="font-weight: bold;">티볼리 유지비</span> 절약을 위해 중고 부품을 사용해도 되나요?</h3>
+      <p>A: 정비 <span style="font-weight: bold;">전문 업체</span>에서는 안전과 직결되지 않는 외장 부품이나 단순 소모품에 한해 중고 부품 사용을 <span style="font-weight: bold;">추천</span>하기도 합니다. 하지만 엔진, 브레이크 등 중요 부품은 정품 또는 신품을 사용하는 것이 안전하고 장기적인 <span style="font-weight: bold;">유지비</span> 절약에 도움이 됩니다. <span style="font-weight: bold;">내돈내산 후기</span>를 참고하여 결정하세요.</p>
+    </div>
+
+    <div class="item">
+      <h3>Q5: <span style="font-weight: bold;">티볼리</span> 오너들의 <span style="font-weight: bold;">후기</span>에서 자주 언급되는 <span style="font-weight: bold;">단점</span>과 <span style="font-weight: bold;">장점</span>은 무엇인가요?</h3>
+      <p>A: <span style="font-weight: bold;">티볼리 장점</span>으로는 합리적인 <span style="font-weight: bold;">가격</span> 대비 넓은 실내 공간과 트렁크, 그리고 뛰어난 디자인이 꼽힙니다. <span style="font-weight: bold;">단점</span>으로는 가솔린 모델의 다소 아쉬운 <span style="font-weight: bold;">연비</span>(동급 <span style="font-weight: bold;">비교</span> 시)와 초반 가속력, 정숙성 등이 있습니다. <span style="font-weight: bold;">후기</span>를 꼼꼼히 <span style="font-weight: bold;">비교</span>해보고 자신에게 중요한 <span style="font-weight: bold;">장단점</span>을 파악해야 합니다.</p>
+    </div>
+  </section>
+
+  <section id="external-links" class="content-box">
+    <h2><span style="color: #2980b9;">티볼리 유지비</span> 관련 신뢰할 수 있는 외부 사이트</h2>
+    <p>보다 정확하고 공인된 정보를 원하시면 아래 외부 사이트를 참고하세요. <span style="font-weight: bold;">네이버 지식백과</span>, <span style="font-weight: bold;">나무위키</span>, 정부 사이트 등을 통해 <span style="font-weight: bold;">티볼리</span> 관련 정보를 추가로 확인할 수 있습니다.</p>
+    <ul>
+      <li><a href="https://www.kg-mobility.com/" target="_blank" rel="noopener">KG 모빌리티(티볼리 제조사) 공식 홈페이지</a></li>
+      <li><a href="https://www.car365.go.kr/web/main/mainPage.do" target="_blank" rel="noopener">자동차민원 대국민포털 (국토교통부)</a></li>
+      <li><a href="https://www.insurance.or.kr/" target="_blank" rel="noopener">보험개발원 자동차보험 정보</a></li>
+      <li><a href="https://terms.naver.com/entry.naver?docId=2072123&cid=48557&categoryId=48557" target="_blank" rel="noopener">네이버 지식백과 - 자동차세</a></li>
+      <li><a href="https://namu.wiki/w/%ED%8B%B0%EB%B3%BC%EB%A6%AC" target="_blank" rel="noopener">나무위키 - 티볼리</a></li>
+    </ul>
+  </section>
+
+  <section id="calculator" class="content-box" aria-label="티볼리 유지비 계산기">
+    <h2>나만의 <span style="font-weight: bold;">티볼리 예상 유지비 계산기</span> 및 문의 신청</h2>
+    <p>개인의 주행거리, 운전 경력, 보험료 조건을 입력하여 정확한 <span style="font-weight: bold;">티볼리 유지비</span>를 산출하고 <span style="font-weight: bold;">견적</span>을 받아보세요. <span style="font-weight: bold;">전문 업체</span>의 상담을 통해 <span style="font-weight: bold;">저렴한 곳</span>을 <span style="font-weight: bold;">추천</span>받고 <span style="font-weight: bold;">할인 혜택</span>을 극대화할 수 있습니다.</p>
+    <form action="#" method="post" aria-describedby="form-desc">
+      <p id="form-desc">아래 양식을 작성하여 <span style="font-weight: bold;">티볼리 유지비</span> <span style="font-weight: bold;">예상 금액</span>을 확인해 보세요. <span style="font-weight: bold;">신규 가입</span> 상담도 가능합니다.</p>
+      <p>
+        <label for="distance">연간 주행거리 (km) <span aria-hidden="true">*</span></label>
+        <input type="number" id="distance" name="distance" required placeholder="예: 15000" min="1000" step="1000" />
+      </p>
+      <p>
+        <label for="insurance-age">운전 경력 (만 나이 기준) <span aria-hidden="true">*</span></label>
+        <input type="number" id="insurance-age" name="insurance-age" required placeholder="예: 30" min="19" />
+      </p>
+      <p>
+        <label for="car-model">보유 모델 (연식/트림)</label>
+        <select id="car-model" name="car-model">
+          <option value="">티볼리 모델 선택</option>
+          <option value="tivoli_1.5t">티볼리 1.5T (가솔린)</option>
+          <option value="air">티볼리 에어</option>
+          <option value="diesel">티볼리 디젤 (구형)</option>
+        </select>
+      </p>
+      <p>
+        <label for="name">이름 <span aria-hidden="true">*</span></label>
+        <input type="text" id="name" name="name" required placeholder="홍길동" />
+      </p>
+      <p>
+        <label for="phone">연락처 <span aria-hidden="true">*</span></label>
+        <input type="tel" id="phone" name="phone" required placeholder="010-1234-5678" pattern="[0-9\-]{9,13}" />
+      </p>
+      <p>
+        <label for="email">이메일</label>
+        <input type="email" id="email" name="email" placeholder="example@email.com" />
+      </p>
+      <p>
+        <label for="inquiry">문의 내용 (선택)</label>
+        <textarea id="inquiry" name="inquiry" rows="5" placeholder="궁금한 점을 자세히 적어주시면 정확한 상담에 도움이 됩니다."></textarea>
+      </p>
+      <p>
+        <button type="submit">유지비 견적 요청</button>
+      </p>
+    </form>
+  </section>
+
+  
